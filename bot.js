@@ -1,13 +1,22 @@
-'use strict'
 var Discord = require('discord.js');
+var client = new Discord.Client();
 var conf = require('./conf.json');
 var prefix = conf.prefix;
+var wolfram = require('wolfram-alpha').createClient(conf.wf, 0);
 
+client.login(conf.token);
 
-client.on("ready" () => {
+client.on("ready", () => {
 	console.log("Client is running");
 })
-client.on("message", (message)) {
+client.on("message", (message) => {
+	if (message.content.startsWith(prefix + "wa")) {
+		message.channel.send("Wolfram query received");
+		let msg = message.content;
+		msg = msg.slice(3);
+		result = yield wolfram.query(msg);
+		channel.message.send(result);
+	}
 	if (message.content.startsWith(prefix + "base")) {
 		let temp = message.content;
 		temp = temp.slice(6);
@@ -52,4 +61,4 @@ client.on("message", (message)) {
 	}
 
 
-}
+});

@@ -1,0 +1,27 @@
+{
+  "name": "math.bot",
+  "version": "1.0.0",
+  "description": "A bot for doing math on discord",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "wolfram-alpha": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/2mill/math.bot.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "Yannick DOrn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2mill/math.bot/issues"
+  },
+  "homepage": "https://github.com/2mill/math.bot#readme"
+}
