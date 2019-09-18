@@ -2,7 +2,10 @@ var Discord = require('discord.js');
 var client = new Discord.Client();
 var conf = require('./conf.json');
 var prefix = conf.prefix;
-var wolfram = require('wolfram-alpha').createClient(conf.wf, 0);
+const WolframAlphaAPI = require('wolfram-alpha-api');
+const waApi = WolframAlphaAPI(conf.wftoken);
+
+
 
 client.login(conf.token);
 
@@ -11,11 +14,12 @@ client.on("ready", () => {
 })
 client.on("message", (message) => {
 	if (message.content.startsWith(prefix + "wa")) {
-		message.channel.send("Wolfram query received");
-		let msg = message.content;
-		msg = msg.slice(3);
-		result = yield wolfram.query(msg);
-		channel.message.send(result);
+		let msg = message.content.slice(3);
+		waApi.getSimple(msg).then(url => {
+			const msgAttachement = new MessageAttachment(img);
+			message.channel.send(msgAttachement);
+		}).catch(console.error);
+
 	}
 	if (message.content.startsWith(prefix + "base")) {
 		let temp = message.content;

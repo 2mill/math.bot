@@ -5,7 +5,7 @@
   "main": "bot.js",
   "dependencies": {
     "discord.js": "^11.5.1",
-    "wolfram-alpha": "^0.6.0"
+    "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
   },
   "devDependencies": {},
   "scripts": {
