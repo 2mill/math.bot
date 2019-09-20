@@ -1,27 +1,75 @@
 {
-  "name": "math.bot",
-  "version": "1.0.0",
-  "description": "A bot for doing math on discord",
-  "main": "bot.js",
-  "dependencies": {
-    "discord.js": "^11.5.1",
-    "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/2mill/math.bot.git"
-  },
-  "keywords": [
-    "discord"
-  ],
-  "author": "Yannick DOrn",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/2mill/math.bot/issues"
-  },
-  "homepage": "https://github.com/2mill/math.bot#readme"
+	"name": "math.bot",
+	"version": "1.0.0",
+	"description": "A bot for doing math on discord",
+	"private": true,
+	"main": "build/bot.js",
+	"dependencies": {
+		"discord.js": "^11.5.1",
+		"global-npm": "0.3.0",
+		"wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
+	},
+	"devDependencies": {
+		"chalk": "2.4.2",
+		"eslint-plugin-node": "10.0.0",
+		"gulp": "4.0.2",
+		"gulp-cli": "2.2.0",
+		"gulp-eslint": "6.0.0",
+		"gulp-rimraf": "1.0.0",
+		"husky": "3.0.5",
+		"lint-staged": "9.2.5",
+		"prettier": "1.18.2"
+	},
+	"scripts": {
+		"start": "node ./build/bot.js",
+		"build": "gulp -f scripts/gulpfile.js --cwd . build -LLLL",
+		"watch": "gulp -f scripts/gulpfile.js --cwd . watch -L",
+		"prestart": "npm run checkdeps",
+		"prewatch": "npm run checkdeps",
+		"checkdeps": "node ./scripts/checkdeps.js ./"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/2mill/math.bot.git"
+	},
+	"keywords": [
+		"discord"
+	],
+	"author": "Yannick Dorn",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/2mill/math.bot/issues"
+	},
+	"homepage": "https://github.com/2mill/math.bot#readme",
+	"eslintConfig": {
+		"extends": [
+			"eslint:recommended",
+			"plugin:node/recommended"
+		],
+		"env": {
+			"node": true
+		},
+		"parserOptions": {
+			"ecmaVersion": 6
+		},
+		"rules": {
+			"node/no-unpublished-require": "off"
+		}
+	},
+	"prettier": {
+		"useTabs": true,
+		"tabWidth": 4,
+		"singleQuote": false
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,css,json,md}": [
+			"prettier --write",
+			"git add"
+		]
+	}
 }
