@@ -1,5 +1,5 @@
-var Discord = require('discord.js');
-var client = new Discord.Client();
+const { Client, Attachment }= require('discord.js');
+var client = new Client();
 var conf = require('./conf.json');
 var prefix = conf.prefix;
 const WolframAlphaAPI = require('wolfram-alpha-api');
@@ -15,10 +15,19 @@ client.on("ready", () => {
 client.on("message", (message) => {
 	if (message.content.startsWith(prefix + "wa")) {
 		let msg = message.content.slice(3);
-		waApi.getSimple(msg).then(url => {
-			const msgAttachement = new MessageAttachment(img);
-			message.channel.send(msgAttachement);
-		}).catch(console.error);
+		message.channel.send(waApi.getSimple(msg).then());
+
+	//	waApi.getFull(msg).then(queryresult => {
+	//		const pods = queryresult.pods;
+	//		const output = pods.map(pod => {
+	//			const subpodContent = pod.subpods.map(subpod => {
+	//				message.channel.send(subpod.img.src);	
+	//			})	
+	//		
+	//		})
+
+	//	
+	//	}).catch(console.error);
 
 	}
 	if (message.content.startsWith(prefix + "base")) {
