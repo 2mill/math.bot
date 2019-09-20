@@ -1,4 +1,7 @@
 *.swp
 node_modules
+package-lock.json
+output.gif
 conf.json
+build
 
