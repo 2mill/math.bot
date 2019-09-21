@@ -1,12 +1,12 @@
+require("dotenv").config();
 const { Client } = require("discord.js");
-var client = new Client();
-var conf = require("../conf.json");
-var prefix = conf.prefix;
+const client = new Client();
+const prefix = ">";
 
 const WolframAlphaAPI = require("wolfram-alpha-api");
-const waApi = WolframAlphaAPI(conf.wftoken);
+const waApi = WolframAlphaAPI(process.env.WOLFRAM_APP_ID);
 
-client.login(conf.token);
+client.login(process.env.DISCORD_TOKEN);
 
 client.on("ready", () => {
 	console.log("Client is running");

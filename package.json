@@ -6,7 +6,9 @@
 	"main": "build/bot.js",
 	"dependencies": {
 		"discord.js": "^11.5.1",
+		"dotenv": "^8.1.0",
 		"global-npm": "0.3.0",
+		"lookenv": "^1.0.1",
 		"wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
 	},
 	"devDependencies": {
@@ -21,9 +23,9 @@
 		"prettier": "1.18.2"
 	},
 	"scripts": {
-		"start": "node ./build/bot.js",
+		"start": "lookenv --path=./scripts/lookenv.config.js --dotenv=./.env -- node ./build/bot.js",
 		"build": "gulp -f scripts/gulpfile.js --cwd . build -LLLL",
-		"watch": "gulp -f scripts/gulpfile.js --cwd . watch -L",
+		"watch": "lookenv --path=./scripts/lookenv.config.js --dotenv=./.env && gulp -f scripts/gulpfile.js --cwd . watch -L",
 		"prestart": "npm run checkdeps",
 		"prewatch": "npm run checkdeps",
 		"checkdeps": "node ./scripts/checkdeps.js ./"
