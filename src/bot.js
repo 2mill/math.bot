@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { Client } = require("discord.js");
+const { Client, RichEmbed } = require("discord.js");
 const client = new Client();
 const prefix = ">";
 
@@ -15,19 +15,79 @@ client.on("ready", () => {
 client.on("message", message => {
 	if (message.content.startsWith(prefix + "wa")) {
 		let msg = message.content.slice(3);
-		message.channel.send(waApi.getSimple(msg).then());
 
-		//	waApi.getFull(msg).then(queryresult => {
-		//		const pods = queryresult.pods;
-		//		const output = pods.map(pod => {
-		//			const subpodContent = pod.subpods.map(subpod => {
-		//				message.channel.send(subpod.img.src);
-		//			})
-		//
-		//		})
+		// start typing indicator
+		message.channel.startTyping();
 
-		//
-		//	}).catch(console.error);
+		waApi
+			.getFull(msg)
+			.then(result => {
+				// stop typing indicator
+				message.channel.stopTyping();
+
+				const { pods } = result;
+
+				// console.log(JSON.stringify(result, null, 2));
+
+				const embedBuffer = [new RichEmbed()];
+				let curEmbed = embedBuffer[0];
+
+				let fieldBuffer = "";
+				let podTitle = "---";
+
+				for (let i = 0; i < pods.length; i++) {
+					const pod = pods[i];
+					podTitle = pod.title;
+
+					for (let j = 0; j < pod.subpods.length; j++) {
+						const subpod = pod.subpods[j];
+
+						// if image
+						if (!subpod.plaintext && subpod.img) {
+							// if current embed already has fields
+							if (curEmbed.fields.length > 0)
+								// push current field buffer
+								curEmbed.addField("\u200B", `**${pod.title}**`);
+							else curEmbed.setTitle(pod.title);
+
+							fieldBuffer = "";
+
+							// set image for embed
+							curEmbed.setImage(subpod.img.src);
+
+							// make next embed if not the last pod or subpod
+							if (
+								i !== pods.length - 1 ||
+								j !== pod.subpods.length - 1
+							) {
+								curEmbed = new RichEmbed();
+								embedBuffer.push(curEmbed);
+							}
+						} else fieldBuffer += subpod.plaintext + "\n";
+					}
+
+					if (fieldBuffer.length > 0) {
+						// push current field buffer
+						curEmbed.addField(pod.title, fieldBuffer || "\u200B");
+						fieldBuffer = "";
+					}
+				}
+
+				if (fieldBuffer.length > 0)
+					// push current field buffer
+					curEmbed.addField(podTitle, fieldBuffer || "\u200B");
+
+				embedBuffer.forEach(e =>
+					message.channel.send(e).catch(console.error)
+				);
+			})
+			.catch(error => {
+				// stop typing indicator
+				message.channel.stopTyping();
+
+				console.error(error);
+				message.channel.send(error.message).catch(console.error);
+			});
 	}
 	if (message.content.startsWith(prefix + "base")) {
 		let temp = message.content;
