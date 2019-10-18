@@ -7,7 +7,7 @@ phases:
             - echo Install process...
             - node --version
             - npm --version
-            - npm i -g npm
+            - npm cache verify
             - npm i
         finally:
             - echo Finished the install process
