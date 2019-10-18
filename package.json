@@ -9,15 +9,15 @@
 		"dotenv": "^8.1.0",
 		"global-npm": "0.3.0",
 		"lookenv": "^1.0.1",
-		"wolfram-alpha-api": "file:wolfram-alpha-api-1.0.0-rc.1.tgz"
-	},
-	"devDependencies": {
+		"wolfram-alpha-api": "file:wolfram-alpha-api-1.0.0-rc.1.tgz",
 		"chalk": "2.4.2",
 		"eslint-plugin-node": "10.0.0",
 		"gulp": "4.0.2",
 		"gulp-cli": "2.2.0",
 		"gulp-eslint": "6.0.0",
-		"gulp-rimraf": "1.0.0",
+		"gulp-rimraf": "1.0.0"
+	},
+	"devDependencies": {
 		"husky": "3.0.5",
 		"lint-staged": "9.2.5",
 		"prettier": "1.18.2"

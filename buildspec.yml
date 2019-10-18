@@ -5,7 +5,7 @@ phases:
             nodejs: 10
         commands:
             - echo Install process...
-            - npm i
+            - npm i --only=prod
         finally:
             - echo Finished the install process
     build:
