@@ -8,7 +8,7 @@ phases:
             - node --version
             - npm --version
             - npm cache verify
-            - npm i
+            - sudo npm i
         finally:
             - echo Finished the install process
     build:
