@@ -7,8 +7,8 @@ phases:
             - echo Install process...
             - node --version
             - npm --version
-            - npm cache verify
-            - sudo npm i
+            - npm config set strict-ssl false
+            - npm i
         finally:
             - echo Finished the install process
     build:
