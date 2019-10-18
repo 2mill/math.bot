@@ -1,0 +1,20 @@
+version : 0.2 
+env :
+
+phases: 
+        install:
+                commands:
+                        - echo Install process...
+                        - apt-get install nodejs
+                        - apt-get install npm
+
+                finally:
+                        - echo Finished the install process
+        build:
+                commands:
+                        - Entered the build phase...
+                        - cd math.bot
+                        - npm i
+        post_build:
+                commands:
+                        - npm run watch
