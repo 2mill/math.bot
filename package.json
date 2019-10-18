@@ -9,7 +9,7 @@
 		"dotenv": "^8.1.0",
 		"global-npm": "0.3.0",
 		"lookenv": "^1.0.1",
-		"wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
+		"wolfram-alpha-api": "file:wolfram-alpha-api-1.0.0-rc.1.tgz"
 	},
 	"devDependencies": {
 		"chalk": "2.4.2",
