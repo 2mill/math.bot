@@ -7,3 +7,4 @@ build
 .env
 .env.*
 .vscode/settings.json
+Dockerfile

@@ -1,8 +1,9 @@
-FROM node:6.11.5
+FROM node:10
 WORKDIR /usr/src/app
 COPY package.json .
 COPY wolfram-alpha-api-1.0.0-rc.1.tgz .
-COPY ".env" . 
+ENV DISCORD_TOKEN=$DISCORD_TOKEN
+ENV WOLFRAM_APP_ID=$WOLFRAM_APP_ID
 RUN npm install
 COPY . .
-CMD ["npm", "run", "watch"]
+CMD ["npm", "run", "deploy"]
