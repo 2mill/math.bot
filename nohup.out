@@ -1,0 +1,112 @@
+npm WARN npm npm does not support Node.js v10.15.2
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 4, 6, 7, 8, 9.
+npm WARN npm You can find the latest version at https://nodejs.org/
+
+> math.bot@1.0.0 prewatch /root/math.bot
+> npm run checkdeps
+
+npm WARN npm npm does not support Node.js v10.15.2
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 4, 6, 7, 8, 9.
+npm WARN npm You can find the latest version at https://nodejs.org/
+
+> math.bot@1.0.0 checkdeps /root/math.bot
+> node ./scripts/checkdeps.js ./
+
+[36m ●  Loading npm...
+
+[0m[2A[36m ●  Checking Dependencies...
+
+[0m[1A[32m 🗸  All dependencies are installed and up-to-date![0m
+
+
+> math.bot@1.0.0 watch /root/math.bot
+> lookenv --path=./scripts/lookenv.config.js --dotenv=./.env && gulp -f scripts/gulpfile.js --cwd . watch -L
+
+
+ ●  Building Bot...
+
+ 🗸  ESLint Report: No Issues Found
+ 🗸  Build Complete
+
+ ●  Starting Bot Process...
+
+Debugger listening on ws://127.0.0.1:9229/83a1fce1-0714-444a-b3f2-371056264613
+
+For help, see: https://nodejs.org/en/docs/inspector
+
+Registered 3 commands
+Bot is now Online!
+npm WARN npm npm does not support Node.js v10.15.2
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 4, 6, 7, 8, 9.
+npm WARN npm You can find the latest version at https://nodejs.org/
+
+> math.bot@1.0.0 prewatch /root/math.bot
+> npm run checkdeps
+
+npm WARN npm npm does not support Node.js v10.15.2
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 4, 6, 7, 8, 9.
+npm WARN npm You can find the latest version at https://nodejs.org/
+
+> math.bot@1.0.0 checkdeps /root/math.bot
+> node ./scripts/checkdeps.js ./
+
+[36m ●  Loading npm...
+
+[0m[2A[36m ●  Checking Dependencies...
+
+[0m[1A[32m 🗸  All dependencies are installed and up-to-date![0m
+
+
+> math.bot@1.0.0 watch /root/math.bot
+> lookenv --path=./scripts/lookenv.config.js --dotenv=./.env && gulp -f scripts/gulpfile.js --cwd . watch -L
+
+npm WARN npm npm does not support Node.js v10.15.2
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 4, 6, 7, 8, 9.
+npm WARN npm You can find the latest version at https://nodejs.org/
+
+> math.bot@1.0.0 prewatch /root/math.bot
+> npm run checkdeps
+
+npm WARN npm npm does not support Node.js v10.15.2
+npm WARN npm You should probably upgrade to a newer version of node as we
+npm WARN npm can't make any promises that npm will work with this version.
+npm WARN npm Supported releases of Node.js are the latest release of 4, 6, 7, 8, 9.
+npm WARN npm You can find the latest version at https://nodejs.org/
+
+> math.bot@1.0.0 checkdeps /root/math.bot
+> node ./scripts/checkdeps.js ./
+
+[36m ●  Loading npm...
+
+[0m[2A[36m ●  Checking Dependencies...
+
+[0m[1A[32m 🗸  All dependencies are installed and up-to-date![0m
+
+
+> math.bot@1.0.0 watch /root/math.bot
+> lookenv --path=./scripts/lookenv.config.js --dotenv=./.env && gulp -f scripts/gulpfile.js --cwd . watch -L
+
+
+ ●  Building Bot...
+
+ 🗸  ESLint Report: No Issues Found
+ 🗸  Build Complete
+
+ ●  Starting Bot Process...
+
+Debugger listening on ws://127.0.0.1:9229/e56bd67e-f778-46f1-9b15-79495a324cb4
+
+For help, see: https://nodejs.org/en/docs/inspector
+
+Registered 3 commands
+Bot is now Online!
