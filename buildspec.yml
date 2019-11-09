@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+    install:
+        runtime-versions:
+            nodejs: 10
+        commands:
+            - echo Install process...
+            - npm i --only=prod
+        finally:
+            - echo Finished the install process
+    build:
+        commands:
+            - Entered the build phase...
+            - npm run build
+    post_build:
+        commands:
+            - echo Build completed on `date`
+artifacts:
+    files:
+        - "build/**/*"
