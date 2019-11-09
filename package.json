@@ -26,6 +26,7 @@
 		"start": "lookenv --path=./scripts/lookenv.config.js --dotenv=./.env -- node ./build/bot.js",
 		"build": "gulp -f scripts/gulpfile.js --cwd . build -LLLL",
 		"watch": "lookenv --path=./scripts/lookenv.config.js --dotenv=./.env && gulp -f scripts/gulpfile.js --cwd . watch -L",
+		"deploy": "npm run build && node ./build/bot.js",
 		"prestart": "npm run checkdeps",
 		"prewatch": "npm run checkdeps",
 		"checkdeps": "node ./scripts/checkdeps.js ./"
