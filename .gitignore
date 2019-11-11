@@ -9,3 +9,4 @@ build
 .vscode/settings.json
 Dockerfile
 *.sh
+image_history
