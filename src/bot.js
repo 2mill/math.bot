@@ -4,7 +4,7 @@ const { processMessage, registerCommands } = require("./commands");
 // setup bot client
 const client = new Client();
 // login to discord api
-client.login("NjQzNTg3MjA3NzY0MTE1NDc1.XcnpUg.UU3DUdfQf0_k771B5Scia_Q4GcE");
+client.login(process.env.DISCORD_TOKEN);
 
 client.on("ready", () => {
 	console.log("Bot is now Online!");
