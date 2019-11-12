@@ -145,7 +145,6 @@ exports.registerCommands = () => {
 		"Simple calc",
 		(client, message, params) =>
 			new Promise((resolve, reject) => {
-				// TODO :: Implement or develop a better program for evalutaing strings
 				//const output = expr.eval(ast);
 				let temp = "";
 				for (let i = 0; i < params.length; i++) {
@@ -172,7 +171,11 @@ exports.registerCommands = () => {
 						)
 						.then(resolve)
 						.catch(reject);
-				else message.channel.send("Math.bot was unable to handle this");
+				else
+					message.channel
+						.send("Math.bot was unable to handle this")
+						.then(resolve)
+						.catch(reject);
 			})
 	);
 	_registerCommand(
