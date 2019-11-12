@@ -171,11 +171,16 @@ exports.registerCommands = () => {
 						)
 						.then(resolve)
 						.catch(reject);
-				else
+				else {
 					message.channel
 						.send("Math.bot was unable to handle this")
 						.then(resolve)
 						.catch(reject);
+					message.channel
+						.send(">wa " + temp)
+						.then(resolve)
+						.catch(reject);
+				}
 			})
 	);
 	_registerCommand(
