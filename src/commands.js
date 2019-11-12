@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { RichEmbed } = require("discord.js");
+var expr = require("expression-eval");
 
 // todo make this configurable per server
 /**
@@ -9,7 +10,8 @@ const prefix = ">";
 
 // initialize the wolfram api client
 const WolframAlphaAPI = require("wolfram-alpha-api");
-const waApi = WolframAlphaAPI(process.env.WOLFRAM_APP_ID);
+//const waApi = WolframAlphaAPI(process.env.WOLFRAM_APP_ID);
+const waApi = WolframAlphaAPI("E7VT5G-L7QJ2WA66Y");
 
 /**
  * Registers all chat commands
@@ -138,6 +140,41 @@ exports.registerCommands = () => {
 		"0b": { name: "Binary", radix: 2 },
 		"0o": { name: "Octal", radix: 8 }
 	};
+	_registerCommand(
+		["calc"],
+		"Simple calc",
+		(client, message, params) =>
+			new Promise((resolve, reject) => {
+				// TODO :: Implement or develop a better program for evalutaing strings
+				//const output = expr.eval(ast);
+				let temp = "";
+				for (let i = 0; i < params.length; i++) {
+					temp += params[i];
+				}
+				var value = 0;
+				var success = true;
+				try {
+					const ast = expr.parse(temp);
+					value = expr.eval(ast);
+				} catch (err) {
+					value =
+						"Math.bot was unable to figure this out\n and is sending the job to WolframAlpha";
+					success = false;
+				}
+				console.log(success);
+				if (success)
+					message.channel
+						.send(
+							new RichEmbed({
+								title: "Simple Calculator",
+								description: `Simple Calc : ${value}`
+							})
+						)
+						.then(resolve)
+						.catch(reject);
+				else message.channel.send("Math.bot was unable to handle this");
+			})
+	);
 	_registerCommand(
 		["base"],
 		"base conversion",
