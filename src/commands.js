@@ -11,7 +11,7 @@ const prefix = ">";
 // initialize the wolfram api client
 const WolframAlphaAPI = require("wolfram-alpha-api");
 //const waApi = WolframAlphaAPI(process.env.WOLFRAM_APP_ID);
-const waApi = WolframAlphaAPI("E7VT5G-L7QJ2WA66Y");
+const waApi = WolframAlphaAPI(process.env.WOLFRAM_APP_ID);
 
 /**
  * Registers all chat commands
