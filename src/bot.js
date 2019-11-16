@@ -17,3 +17,4 @@ client.on("message", message => {
 
 // register commands
 registerCommands();
+//adding a comment for testing docker with git
