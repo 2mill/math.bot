@@ -6,7 +6,7 @@ var expr = require("expression-eval");
 /**
  * chat command prefix
  */
-const prefix = ">";
+const prefix = "$";
 
 // initialize the wolfram api client
 const WolframAlphaAPI = require("wolfram-alpha-api");
