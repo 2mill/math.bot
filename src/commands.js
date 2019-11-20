@@ -30,7 +30,7 @@ exports.registerCommands = () => {
 		)
 	);
 
-	_registerCommand(["greatJSpog"], "Jacob's meme", client => {
+	_registerCommand(["greatJSpog"], "Jacob's meme", message => {
 		message.channel.send("https://i.imgur.com/0xQZ8NH.png");
 	});
 
