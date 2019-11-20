@@ -30,6 +30,17 @@ exports.registerCommands = () => {
 		)
 	);
 
+	_registerCommand( 
+		["greatJSpog"],
+		"Jacob's meme",
+		(client, message) => {
+			client.channel.send(
+				"https://i.imgur.com/0xQZ8NH.png"
+			)
+		}
+
+	)
+
 	// register wolfram alpha command
 	_registerCommand(
 		["wa", "wolfram"],
