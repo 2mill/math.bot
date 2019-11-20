@@ -31,7 +31,7 @@ exports.registerCommands = () => {
 	);
 
 	_registerCommand(["greatJSpog"], "Jacob's meme", client => {
-		client.channel.send("https://i.imgur.com/0xQZ8NH.png");
+		message.channel.send("https://i.imgur.com/0xQZ8NH.png");
 	});
 
 	// register wolfram alpha command
