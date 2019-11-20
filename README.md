@@ -15,7 +15,7 @@ Version : 0.1.1
 
 ## Big Time Helpers :
 
-GreatJS
+jacobcoughenour
 [Github](https://github.com/jacobcoughenour)
 [GitLab](https://gitlab.com/jacobcoughenour)
 
